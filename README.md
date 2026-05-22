@@ -242,7 +242,30 @@ Follow sigil‑based trust rules
 🐺 Wolf CoG OS
 A new species of operating system.
 
-md
+
+Wolf CoG OS is built nights, weekends, and chaos‑goblin energy.  
+If you want to fuel the next invariant engine, sigil layer, or creative lane:
+
+README honesty line (for users right now):
+
+Wolf CoG OS currently implements a signed, measured boot manifest for its cognitive runtime, law spine, and PID1 chain.
+Firmware Secure Boot is not yet enrolled; you must disable Secure Boot in BIOS/UEFI to boot the ISO.
+The next milestone is signing/enrolling shim/GRUB/kernel/initrd keys and folding those measurements into the same manifest and proof chain.
+
+Future: firmware Secure Boot enrollment plan (just sketched):
+
+generate CoGOS signing keypair
+
+sign shim + GRUB + kernel
+
+enroll public key in firmware (or use MOK)
+
+teach secure_boot_trust.py to:
+
+verify on‑disk hashes
+
+record firmware/bootloader measurements into the CoGOS proof report
+
 ## 🐺 Support Wolf CoG OS
 
 Wolf CoG OS is built nights, weekends, and chaos‑goblin energy.  
