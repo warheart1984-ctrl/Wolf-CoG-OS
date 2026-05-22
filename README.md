@@ -250,4 +250,4 @@ If you want to fuel the next invariant engine, sigil layer, or creative lane:
 
 **Buy Me a Coffee:** https://buymeacoffee.com/Chaosgoblinus
 
-Your support helps keep the governed subst
+Your support helps keep the governed substrate evolving.
