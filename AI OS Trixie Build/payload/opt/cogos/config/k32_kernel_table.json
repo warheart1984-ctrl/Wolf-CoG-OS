@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "classes": {
+    "P": { "range": [1, 8], "label": "Perception" },
+    "R": { "range": [9, 16], "label": "Relation" },
+    "D": { "range": [17, 25], "label": "Distortion/Alignment", "sentinel": 25 },
+    "A": { "range": [26, 32], "label": "Agency" }
+  },
+  "kernels": {
+    "K1": "baseline",
+    "K2": "attention",
+    "K3": "orientation",
+    "K4": "proximity",
+    "K5": "recognition",
+    "K6": "readiness",
+    "K7": "resistance",
+    "K8": "permission",
+    "K9": "anchoring",
+    "K10": "calibration",
+    "K11": "honesty",
+    "K12": "prioritization",
+    "K13": "fixation",
+    "K14": "context",
+    "K15": "alignment_hint",
+    "K16": "attunement",
+    "K17": "saturation",
+    "K18": "attenuation",
+    "K19": "load",
+    "K20": "throttle",
+    "K21": "routing",
+    "K22": "correction",
+    "K23": "fit",
+    "K24": "alignment",
+    "K25": "misalignment_sentinel",
+    "K26": "leverage",
+    "K27": "consequence",
+    "K28": "memory",
+    "K29": "identity",
+    "K30": "intention",
+    "K31": "conviction",
+    "K32": "agency"
+  }
+}

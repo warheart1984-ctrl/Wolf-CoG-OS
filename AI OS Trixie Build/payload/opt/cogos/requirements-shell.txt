@@ -1,0 +1,2 @@
+# Native CoGOS shell window (optional; browser fallback if missing)
+pywebview>=5.0

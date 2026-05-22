@@ -1,0 +1,12 @@
+[Unit]
+Description=Wolf CoG OS UL App Bridge (wine-wolf-bridge)
+After=network.target
+
+[Service]
+Type=simple
+Environment=COGOS_ROOT=/opt/cogos
+ExecStart=/usr/bin/python3 /opt/cogos/bin/cogos-wine-bridge.py daemon
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

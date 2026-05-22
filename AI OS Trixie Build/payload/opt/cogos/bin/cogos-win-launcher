@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+"""Double-click launcher for governed Windows executables on Wolf CoG OS."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(os.environ.get("COGOS_ROOT", "/opt/cogos"))
+RUNTIME = ROOT / "runtime"
+if str(RUNTIME) not in sys.path:
+    sys.path.insert(0, str(RUNTIME))
+
+from ul_app_bridge.classifier import classify_binary  # noqa: E402
+from wine_wolf_bridge.launcher import launch_windows_app  # noqa: E402
+
+
+def _banner_once(message: str) -> None:
+    marker = ROOT / "memory" / "ul_app_bridge" / ".win-launcher-banner-shown"
+    marker.parent.mkdir(parents=True, exist_ok=True)
+    if marker.exists():
+        return
+    marker.write_text(message + "\n", encoding="utf-8")
+    try:
+        subprocess.Popen(
+            ["notify-send", "Wolf CoG OS", message],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+    except OSError:
+        pass
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Run .exe files through the governed Wine bridge")
+    parser.add_argument("exe", help="Windows executable path")
+    parser.add_argument("args", nargs="*", help="Arguments passed to the Windows app")
+    parser.add_argument("--profile", default="win.default.safe")
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--json", action="store_true")
+    ns = parser.parse_args(argv)
+
+    exe = Path(ns.exe).expanduser()
+    if not exe.exists():
+        result = {"ok": False, "error": "ERR_FS_NOT_FOUND", "path": str(exe)}
+        print(json.dumps(result, indent=2))
+        return 1
+
+    info = classify_binary(str(exe))
+    if not info.get("foreign") or info.get("ecosystem") != "windows":
+        result = {"ok": False, "error": "ERR_NOT_WINDOWS_EXE", "classifier": info, "path": str(exe)}
+        print(json.dumps(result, indent=2))
+        return 2
+
+    _banner_once("Running as a governed Windows app. It can access your home folder, not system files.")
+    result = launch_windows_app(str(exe), ns.args, profile_id=ns.profile, dry_run=ns.dry_run)
+    if ns.json or ns.dry_run or not result.get("ok"):
+        print(json.dumps(result, indent=2))
+    return 0 if result.get("ok") else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

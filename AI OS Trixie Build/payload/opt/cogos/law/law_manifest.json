@@ -1,0 +1,23 @@
+{
+    "name":  "Project Infi CoGOS Law Manifest",
+    "version":  "0.1",
+    "created":  "2026-05-12T00:00:00Z",
+    "mode":  "immutable-hash-check",
+    "files":  [
+                  {
+                      "path":  "/opt/cogos/law/root_law.json",
+                      "sha256":  "2899506c521c48ca15d3a4d08779feb853f75572bef2f0062215af5efbc2bb68",
+                      "bytes":  660
+                  },
+                  {
+                      "path":  "/opt/cogos/law/boot_law.json",
+                      "sha256":  "47c5596f91b3ff3608a8ce48ed4874a4a0633db38dbf218c5b4691a2c256f707",
+                      "bytes":  463
+                  },
+                  {
+                      "path":  "/opt/cogos/law/governance_rules.json",
+                      "sha256":  "1648a6099851f3b9a8425f8b71663f414f615b16e9722adbe7dc1c722aaee621",
+                      "bytes":  5741
+                  }
+              ]
+}

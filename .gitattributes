@@ -1,0 +1,11 @@
+*.sh text eol=lf
+*.py text eol=lf
+*.c text eol=lf
+*.service text eol=lf
+*.desktop text eol=lf
+**/payload/usr/local/bin/* text eol=lf
+**/payload/opt/cogos/bin/* text eol=lf
+**/payload/opt/cogos/bin/cognitive_init text eol=lf
+**/payload/etc/init.d/* text eol=lf
+*.png binary
+*.docx binary

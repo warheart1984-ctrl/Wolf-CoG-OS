@@ -1,0 +1,3 @@
+# community.hello_ul — third-party UL example
+print ul_slug("hello from ul package")
+print ul_now()

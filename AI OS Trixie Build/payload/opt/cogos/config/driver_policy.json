@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "default_mode": "governed",
+  "rules": [
+    {
+      "id": "usb-storage",
+      "match": { "bus": "usb", "class": "storage" },
+      "hal_class": "storage_block",
+      "k_threshold": 20,
+      "k_ceiling": 24,
+      "module": "usb-storage",
+      "tier": "operator",
+      "requires_manual": false,
+      "notes": "Removable USB mass storage"
+    },
+    {
+      "id": "nvme-block",
+      "match": { "class": "nvme" },
+      "module": "nvme",
+      "tier": "operator",
+      "requires_manual": false,
+      "notes": "NVMe block devices"
+    },
+    {
+      "id": "network-ethernet",
+      "match": { "class": "network", "kind": "ethernet" },
+      "module": "kernel",
+      "tier": "operator",
+      "requires_manual": false,
+      "notes": "Wired network interfaces"
+    },
+    {
+      "id": "network-wifi",
+      "match": { "class": "network", "kind": "wireless" },
+      "hal_class": "network_iface",
+      "k_threshold": 17,
+      "k_ceiling": 23,
+      "module": "cfg80211",
+      "tier": "operator",
+      "requires_manual": true,
+      "notes": "Wireless — operator approve on first attach"
+    },
+    {
+      "id": "gpu-drm",
+      "match": { "class": "display" },
+      "module": "drm",
+      "tier": "operator",
+      "requires_manual": true,
+      "notes": "Display/GPU drivers"
+    },
+    {
+      "id": "audio-alsa",
+      "match": { "class": "audio" },
+      "module": "snd",
+      "tier": "operator",
+      "requires_manual": false,
+      "notes": "Audio devices"
+    },
+    {
+      "id": "unknown-pci",
+      "match": { "bus": "pci", "class": "unknown" },
+      "module": null,
+      "tier": "operator",
+      "requires_manual": true,
+      "notes": "Unknown PCI — block until manual policy row added"
+    }
+  ]
+}

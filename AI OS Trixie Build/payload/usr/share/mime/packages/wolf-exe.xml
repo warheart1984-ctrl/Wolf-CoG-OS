@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-msdownload">
+    <comment>Windows Executable</comment>
+    <glob pattern="*.exe"/>
+  </mime-type>
+  <mime-type type="application/x-msdos-program">
+    <comment>MS-DOS/Windows Program</comment>
+    <glob pattern="*.exe"/>
+    <glob pattern="*.com"/>
+  </mime-type>
+  <mime-type type="application/vnd.microsoft.portable-executable">
+    <comment>Portable Executable</comment>
+    <glob pattern="*.exe"/>
+    <glob pattern="*.dll"/>
+  </mime-type>
+</mime-info>

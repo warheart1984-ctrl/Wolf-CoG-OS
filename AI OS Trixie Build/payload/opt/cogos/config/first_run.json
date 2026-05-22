@@ -1,0 +1,17 @@
+{
+  "completed": true,
+  "completed_at": "2026-05-22T02:36:06Z",
+  "display_name": "Operator",
+  "hostname": "cogos-smoke",
+  "kid_profile_enabled": true,
+  "mode_default": "manual",
+  "profile_id": "operator",
+  "workspace": {
+    "created_at": "2026-05-22T02:36:06Z",
+    "id": "first-run-smoke",
+    "name": "First Run Smoke",
+    "path": "E:\\project-infi\\AI OS Trixie Build\\payload\\opt\\cogos\\memory\\workspaces\\first-run-smoke",
+    "profile_id": "operator",
+    "updated_at": "2026-05-22T02:36:06Z"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "doctrine": "hardware_enforces_software_proposes",
+  "authority": {
+    "final_authority": "physical_hardware_veto",
+    "software_authority": "report_only",
+    "os_trusted": false,
+    "runtime_trusted": false,
+    "sigil_system_trusted": false,
+    "software_can_override": false
+  },
+  "fail_safe": {
+    "out_of_band_required": true,
+    "separate_power_rail": true,
+    "separate_microcontroller": true,
+    "separate_bus": true,
+    "separate_firmware": true,
+    "separate_clock": true,
+    "dynamic_code_allowed": false,
+    "linux_allowed": false,
+    "python_allowed": false,
+    "llm_allowed": false,
+    "vm_allowed": false,
+    "scheduler_allowed": false
+  },
+  "physical_veto_lines": [
+    "cut_power",
+    "halt_execution",
+    "freeze_bus",
+    "lock_disk",
+    "drop_network",
+    "kill_process"
+  ],
+  "software_interface": {
+    "mode": "report_only",
+    "event_log": "memory/hardware_veto/events.jsonl",
+    "proof_log": "memory/logs/hardware_veto_proof.json",
+    "attached_hint": "memory/hardware_veto/ATTACHED",
+    "heartbeat_hint": "memory/hardware_veto/HEARTBEAT"
+  }
+}

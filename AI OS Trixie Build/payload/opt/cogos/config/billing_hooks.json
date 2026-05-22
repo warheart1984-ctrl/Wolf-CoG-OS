@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "enabled": true,
+  "export_format": "jsonl",
+  "meters": {
+    "nova.chat": { "unit": "request", "weight": 1 },
+    "creative.story_draft": { "unit": "artifact", "weight": 2 },
+    "creative.beatbox_score": { "unit": "artifact", "weight": 2 },
+    "creative.render": { "unit": "artifact", "weight": 5 },
+    "ul.dangerous": { "unit": "denied_attempt", "weight": 0 },
+    "pkg.install": { "unit": "package", "weight": 1 },
+    "mesh.propose": { "unit": "message", "weight": 1 },
+    "mesh.receive": { "unit": "message", "weight": 1 }
+  },
+  "notes": "Scaffold only — wire to external billing later via export"
+}

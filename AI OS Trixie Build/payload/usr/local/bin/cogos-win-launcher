@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+COGOS_ROOT="${COGOS_ROOT:-/opt/cogos}"
+exec python3 "$COGOS_ROOT/bin/cogos-win-launcher" "$@"

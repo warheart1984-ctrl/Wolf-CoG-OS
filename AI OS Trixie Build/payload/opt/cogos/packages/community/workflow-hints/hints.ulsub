@@ -1,0 +1,2 @@
+# workflow hints — uses stdlib workflow.suggest contract
+print ul_workflow_suggest

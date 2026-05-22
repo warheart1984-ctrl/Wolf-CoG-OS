@@ -1,0 +1,15 @@
+[Unit]
+Description=CoGOS K32 kernel forward peer (/run/cogos/k32.sock)
+After=network.target cogos-guest-proof.service
+ConditionPathExists=/opt/cogos/runtime/k32_forward_daemon.py
+
+[Service]
+Type=simple
+Environment=COGOS_ROOT=/opt/cogos
+ExecStart=/usr/bin/python3 /opt/cogos/runtime/k32_forward_daemon.py start
+Restart=on-failure
+RuntimeDirectory=cogos
+RuntimeDirectoryMode=0755
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "max_daily_suggestions": 2,
+  "workflow_promote_after_repeats": 2,
+  "watch_folders": [
+    "C:\\Users\\randj\\AppData\\Local\\Temp\\tmp4u1mp_39\\inbox-watch"
+  ],
+  "notes": "Paths expand on the host. Organize scans are dry-run unless operator runs cogos-auto organize --apply."
+}

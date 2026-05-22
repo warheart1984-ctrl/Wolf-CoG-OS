@@ -1,0 +1,3 @@
+#!/bin/sh
+export COGOS_ROOT="${COGOS_ROOT:-/opt/cogos}"
+exec python3 "$COGOS_ROOT/bin/cogos_ul_pkg.py" "$@"

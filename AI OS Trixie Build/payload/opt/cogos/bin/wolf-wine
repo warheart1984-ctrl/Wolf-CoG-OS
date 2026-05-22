@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Wolf CoG OS — auto-governed Windows app launch (no compatibility toggle).
+set -euo pipefail
+COGOS_ROOT="${COGOS_ROOT:-/opt/cogos}"
+exec python3 "$COGOS_ROOT/bin/cogos-wine-bridge.py" run "$@"

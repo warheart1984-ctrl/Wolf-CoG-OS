@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Wolf CoG OS Windows Launcher
+Comment=Run Windows executables under the governed UL/Wine bridge
+Exec=/usr/local/bin/cogos-win-launcher "%f"
+Type=Application
+Terminal=false
+NoDisplay=true
+MimeType=application/x-msdownload;application/x-msdos-program;application/vnd.microsoft.portable-executable;application/x-dosexec;application/x-executable;
+Categories=System;

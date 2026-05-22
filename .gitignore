@@ -1,0 +1,8 @@
+
+*.iso
+*.iso.sha256
+__pycache__/
+*.pyc
+AI OS Trixie Build/payload/opt/cogos/memory/backups/
+AI OS Trixie Build/payload/opt/cogos/memory/logs/
+AI OS Trixie Build/payload/opt/cogos/memory/traces/

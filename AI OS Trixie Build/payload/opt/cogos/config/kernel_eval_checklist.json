@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "status": "deferred",
+  "gate": "Do not start custom kernel until Phase C mesh + UL ecosystem proven on Debian metal",
+  "checklist": [
+    "Phase A+B metal proof archived",
+    "Mesh family soak passes on 2+ physical devices",
+    "UL third-party catalog verify + install on live ISO",
+    "Billing export reviewed for tier metering accuracy",
+    "RAID proposal path proven; no silent destructive apply",
+    "30-minute idle soak on reference hardware clean"
+  ],
+  "next_base_candidates": ["debian-stable", "custom-microkernel-eval-only"],
+  "owner": "operator"
+}

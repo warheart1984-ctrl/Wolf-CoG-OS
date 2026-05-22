@@ -1,0 +1,12 @@
+{
+  "boot_verify_autostart": true,
+  "daemon_autostart": true,
+  "dashboard_autostart": false,
+  "desktop_autostart": false,
+  "first_run_completed": true,
+  "hal_autostart": true,
+  "operator_message": "CoGOS first-run setup complete. Use Control Center for profiles, backup, install, and device storage.",
+  "persistence_autostart": true,
+  "profile": "operator_shell",
+  "shell_mode": "desktop"
+}

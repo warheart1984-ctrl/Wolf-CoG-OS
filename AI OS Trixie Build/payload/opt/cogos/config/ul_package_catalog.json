@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "channel": "cogos-ul-ecosystem",
+  "packages": [
+    {
+      "id": "community.hello_ul",
+      "name": "Hello UL Community Pack",
+      "version": "1.0.0",
+      "publisher": "cogos-community",
+      "required_tier": "base",
+      "source_dir": "packages/community/hello-ul",
+      "ul_files": ["hello.ul", "manifest.ulpkg.json"],
+      "stdlib_requires": ["core.now", "ui.notice"],
+      "description": "Reference third-party UL package for ecosystem smoke"
+    },
+    {
+      "id": "community.workflow_hints",
+      "name": "Workflow Hints UL",
+      "version": "1.0.0",
+      "publisher": "cogos-community",
+      "required_tier": "standard",
+      "source_dir": "packages/community/workflow-hints",
+      "ul_files": ["hints.ulsub"],
+      "stdlib_requires": ["workflow.suggest", "auto.status"],
+      "description": "Automatic workflow hint helpers via UL substrate"
+    },
+    {
+      "id": "curated.creative_starter",
+      "name": "Creative Starter UL",
+      "version": "1.0.0",
+      "publisher": "project-infi",
+      "required_tier": "standard",
+      "source_dir": "packages/curated/creative-starter",
+      "ul_files": ["creative_starter.ulsub"],
+      "stdlib_requires": ["agent.summary"],
+      "description": "Curated UL snippets for creative lane demos"
+    }
+  ]
+}

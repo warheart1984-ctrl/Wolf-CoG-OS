@@ -251,3 +251,77 @@ If you want to fuel the next invariant engine, sigil layer, or creative lane:
 **Buy Me a Coffee:** https://buymeacoffee.com/Chaosgoblinus
 
 Your support helps keep the governed substrate evolving.
+
+## Wolf CoG OS 12.20 Clean Build
+
+The current launch build is `12.20.0-wolf-os`.
+
+Local launch ISO proof:
+
+```text
+AI OS Debian Build/output/project-infi-cogos-12.20.0-wolf-os.iso
+SHA256: 51e80bd2eb7f30479cc3fbf744a94d71da679cf943d6ade49a57588006068961
+```
+
+This repository does not store the ISO binary. It stores the payload, overlays, runtime, governance layer, and rebuild scripts so the image can be reproduced from a Debian/Trixie Cinnamon live ISO.
+
+### 12.20 launch features
+
+- Cognitive PID1 install-chain repair: `cogos-install` restores `init.original` from systemd and links `init` to `cognitive_init`.
+- Boot-time PID1 safety: `cogos_boot.py --boot` avoids the full eval harness during the boot timeout window.
+- Governed Windows app UX: double-click a `.exe` and it routes through `cogos-win-launcher` using the `win.default.safe` profile.
+- Wine-Wolf Bridge: Windows apps are admitted through UL App Bridge, assigned an OS-side sigil, and logged to provenance.
+- UL App Bridge: PE classifier, handshake, policy envelope, hash-chained bridge provenance, and focused smokes.
+- MIME integration: `.exe` files are associated with the Wolf CoG OS Windows launcher in the live image and installed system.
+- Rebuildable ISO flow: scripts are included for Linux/WSL users to remaster from a base Debian Cinnamon ISO.
+- Faster remaster staging: volatile CoGOS memory logs, traces, and backups are excluded from install/remaster payload copies.
+
+### Rebuild the ISO
+
+From Linux or WSL:
+
+```bash
+git clone https://github.com/warheart1984-ctrl/Wolf-CoG-OS
+cd Wolf-CoG-OS
+bash scripts/build_trixie_cogos.sh /path/to/debian-live-*-cinnamon.iso
+```
+
+One-shot validation plus remaster:
+
+```bash
+bash scripts/one-shot-wolf-os.sh /path/to/debian-live-*-cinnamon.iso
+```
+
+Windows helper:
+
+```powershell
+.\scripts\one-shot-launch.ps1 -Tag 12.20.0-wolf-os
+```
+
+Manual remaster entrypoint:
+
+```bash
+cd "AI OS Debian Build"
+COGOS_TAG=12.20.0-wolf-os \
+COGOS_WORK=/tmp/project-infi-debian-cogos-build \
+bash scripts/build_debian_cogos.sh /path/to/debian-live-*-cinnamon.iso
+```
+
+### Launch validation
+
+Focused launch smokes:
+
+```bash
+python3 "AI OS Trixie Build/payload/opt/cogos/runtime/ul_app_bridge_smoke.py"
+python3 "AI OS Trixie Build/payload/opt/cogos/runtime/wine_wolf_bridge_smoke.py"
+python3 "AI OS Trixie Build/payload/opt/cogos/runtime/win_launcher_smoke.py"
+```
+
+On metal after flashing:
+
+```bash
+cogos-install apply --target /dev/sdX --yes --confirm-erase sdX --allow-removable
+cogos-win-launcher ~/Downloads/foo.exe
+cogos-wine-bridge status
+cogos-ul-bridge verify-ledger
+```

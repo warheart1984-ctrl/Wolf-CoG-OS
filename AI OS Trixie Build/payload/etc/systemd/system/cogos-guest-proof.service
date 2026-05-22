@@ -1,0 +1,13 @@
+[Unit]
+Description=CoGOS guest proof export
+After=local-fs.target systemd-udev-settle.service
+Wants=systemd-udev-settle.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 20
+ExecStart=/usr/local/bin/cogos-guest-proof
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "defaults": {
+    "sensory_input": { "hal_class": "sensory_input", "k_threshold": 17, "k_ceiling": 24 },
+    "storage_block": { "hal_class": "storage_block", "k_threshold": 20, "k_ceiling": 24 },
+    "network_iface": { "hal_class": "network_iface", "k_threshold": 17, "k_ceiling": 23 },
+    "display_gpu": { "hal_class": "display_gpu", "k_threshold": 26, "k_ceiling": 32 },
+    "audio": { "hal_class": "audio", "k_threshold": 17, "k_ceiling": 24 },
+    "generic_pci": { "hal_class": "generic_pci", "k_threshold": 20, "k_ceiling": 25 },
+    "payload_volume": { "hal_class": "payload_volume", "k_threshold": 26, "k_ceiling": 32 }
+  }
+}

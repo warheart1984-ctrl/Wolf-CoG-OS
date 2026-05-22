@@ -1,0 +1,7 @@
+{
+  "id": "community.hello_ul",
+  "version": "1.0.0",
+  "publisher": "cogos-community",
+  "ul_entry": "hello.ul",
+  "license": "MIT"
+}
