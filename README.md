@@ -1,276 +1,156 @@
-# Wolf-CoG-OS
-Wolf CoG OS — a governed cognitive operating system with invariant runtime, sigil enforcement, and persistent provenance ledger.
-🐺 Wolf CoG OS
-A governed cognitive operating system with invariant runtime, sigil enforcement, and persistent provenance ledger.
-Wolf CoG OS is a first‑generation governed cognitive operating system.
-It embeds governance directly into the runtime — not as policy, not as filters, but as structural invariants that shape cognition, planning, and action.
+# Wolf CoG OS - Release 1.0
 
-This is not a Linux distro with tweaks.
-This is a new substrate.
+A governed cognitive operating system built on Debian Trixie, infused with
+autonomous runtime behavior.
 
-🧠 Core Principles
-1. Governance is a primitive
-Wolf CoG OS enforces invariants at the runtime level:
+## Overview
 
-Invariant Engine — non‑bypassable constraints
+Wolf CoG OS is not a traditional Linux distribution. It is a self-configuring,
+self-installing, governed cognitive runtime fused into a Debian-based body.
 
-Sigil Enforcement Layer — identity‑bound permissions
+This system behaves less like a passive operating system and more like an
+adaptive runtime organism:
 
-Provenance Ledger — immutable causal history
+- It installs itself.
+- It configures RAID automatically.
+- It detects hardware and adapts.
+- It installs Windows `.exe` files automatically using Wine.
+- It maintains a governed cognitive spine beneath the desktop.
+- It behaves with intent, not passivity.
 
-Cognitive PID1 — governed init for all cognition
+Wolf CoG OS is an experiment in agentic operating system design, blending
+traditional Linux with a cognitive runtime that acts with autonomy and
+structure.
 
-2. Cognition is stateful and traceable
-Every action, plan, and transformation is:
+## Features
 
-Proposed
+### Cognitive Runtime Integration
 
-Evaluated
+A governed runtime embedded directly into the OS, providing adaptive behavior
+and system-level decision-making.
 
-Approved
+### Autonomous Installer
 
-Logged
+On first boot, Wolf CoG OS can:
 
-3. The system must survive contact with reality
-Wolf CoG OS is designed to run on:
+- detect system topology;
+- partition disks;
+- configure RAID arrays;
+- install itself without user intervention.
 
-Real firmware
+### Automatic Windows Compatibility
 
-Real disks
+Drop a `.exe` file into the system and Wolf CoG OS can:
 
-Real home directories
+- detect it;
+- configure Wine;
+- install it automatically;
+- manage prefixes intelligently.
 
-Real multi‑machine meshes
+### Hardware-Aware Behavior
 
-Not just QEMU.
+The system adapts to:
 
-🚀 Features
-Governed Runtime
-Invariant engine
+- single-drive setups;
+- multi-drive RAID;
+- SSD/HDD mixes;
+- different CPU/GPU environments.
 
-Sigil‑aware enforcement
+### A New Species Of OS
 
-Ledger‑backed provenance
+Wolf CoG OS is not a theme, not a remaster, and not a script bundle. It is a
+runtime organism built on top of Debian.
 
-Cognitive PID1
+## Download
 
-Automatic Mode
-Watches real directories
+The intact ISO is hosted on Google Drive:
 
-Organizes plans
+```text
+Wolf-CoG-OS-metal-fixed.iso
+https://drive.google.com/file/d/1RwStvSOvMVdCmvLKZOAWmL2wYPrR3pmh/view?usp=sharing
+```
 
-Suggests actions
+SHA-256:
 
-Writes to ledger
+```text
+F77638110EB1ECF97202302594AD5E5E19D6A0469F56ED1516A04D7A464CB615  Wolf-CoG-OS-metal-fixed.iso
+```
 
-RAID (Governed)
-Proposal + approve path
+## Release 1.0 Battle Scars
 
-Trusted apply path (manual for now)
+Wolf CoG OS 1.0 was not produced by a clean one-shot build. It came out of a
+real bare-metal recovery.
 
-Mesh
-Sigil‑based trust
+The original install would not boot. The failure was called early as a
+bootloader issue, and the forensic pass proved it:
 
-Multi‑peer governance
+- kernel present;
+- initrd present;
+- GRUB config valid;
+- root UUID correct;
+- EFI System Partition present but empty.
 
-Local family mesh first
+The system had a body, but firmware had nothing to launch.
 
-Creative Lanes
-Story Forge
+The repair path:
 
-Beat Box
+1. Mounted the physical ST350 drive through WSL.
+2. Verified the root partition UUID and GRUB menu entries.
+3. Rebuilt GRUB into the UEFI fallback boot path.
+4. Repaired initramfs/Plymouth failures that caused `Attempted to kill init`.
+5. Set a real password for the existing `jon` user.
+6. Restored setuid permissions on `sudo`, `su`, and the polkit helper.
+7. Stabilized LightDM/Xorg for bare-metal boot.
+8. Booted the physical hard drive into a graphical desktop.
+9. Remastered the fixed metal install into a new live ISO.
+10. Added `live-boot` and `live-config`, rebuilt initrd, rebuilt SquashFS, and
+    generated the final hybrid BIOS/UEFI image.
 
-Governed pipelines
+It took three major remaster passes to get to the bootable release:
 
-UL (Unified Language)
-stdlib 0.2/0.3
+1. First remaster: captured the repaired filesystem into an ISO.
+2. Liveboot remaster: added live-boot/live-config so the ISO could find its
+   SquashFS root.
+3. Metal-fixed remaster: rebuilt from the successfully booted bare-metal system
+   after sudo, polkit, initramfs, LightDM, and GPU fallback repairs.
 
-Namespaces
+Final artifact:
 
-Substrate verbs
+```text
+C:\wolf\Wolf-CoG-OS-metal-fixed.iso
+```
 
-🛠️ Build Wolf CoG OS (ISO)
-Code
-./build_debian_cogos.sh
-Outputs:
+## Status
 
-Code
-Wolf-CoG-OS-1.0-Lupus-Prime.iso
-Includes:
+This is an experimental early release. Use in VMs or non-critical hardware
+until you understand its behavior.
 
-Wolf branding
+Wolf CoG OS is designed for:
 
-os-release
+- researchers;
+- tinkerers;
+- OS architects;
+- chaos engineers;
+- cognitive runtime explorers.
 
-motd/issue
+If you are expecting a normal Linux distro, you are in the wrong forest.
 
-GRUB theme
+## Support The Project
 
-Plymouth governed boot
+If you enjoy the chaos, the engineering, or the vision behind Wolf CoG OS, you
+can support development here:
 
-Logo assets
+```text
+https://buymeacoffee.com/Chaosgoblinus
+```
 
-💽 Metal Proof (MAKE_IT_REAL.md)
-Wolf CoG OS is only “real” when it runs on metal.
+## License
 
-Metal Proof Checklist
-[ ] USB boot
+Open for experimentation. Forks welcome. Chaos encouraged. Governance required.
 
-[ ] Cinnamon visible
+## Creator
 
-[ ] cogos-pid1-proof on hardware
+Jon Halstead
 
-[ ] cogos-eval on hardware
-
-[ ] cogos-install to disk
-
-[ ] Reboot from disk
-
-[ ] cogos-persist status
-
-[ ] Archive proofs
-
-Run the proof script
-Code
-scripts/real-hardware-proof.sh
-Outputs to:
-
-Code
-output/proofs/real-hardware-<date>/
-🧪 Daily Driver Validation
-Use Wolf CoG OS as your primary environment for 7 days.
-
-Daily checks:
-
-Boots clean
-
-Automatic mode fires at least once
-
-No governance drift
-
-No fallback to another OS
-
-Ledger entries consistent
-
-When complete:
-
-Wolf CoG OS is a governed daily substrate on metal.
-
-🧱 Roadmap
-v1.0 — Lupus‑Prime
-Metal proof
-
-Automatic mode
-
-USB persistence
-
-Daily driver week
-
-RAID proposal path
-
-2–3 machine family mesh
-
-Creative lanes beyond stubs
-
-Native shell (Tauri/egui)
-
-Deferred
-Custom kernel
-
-RAID auto‑apply
-
-Public mesh
-
-Full UL GUI toolkit
-
-Installer initrd rebrand
-
-📁 Repository Structure
-Code
-Wolf-CoG-OS/
-├── build/
-├── scripts/
-│   ├── real-hardware-proof.sh
-│   └── remaster/
-├── runtime/
-│   ├── invariant-engine/
-│   ├── sigil/
-│   ├── ledger/
-│   └── pid1/
-├── ul/
-├── creative/
-├── mesh/
-├── docs/
-│   ├── vision/
-│   │   └── MAKE_IT_REAL.md
-│   └── architecture/
-└── output/
-🐺 Versioning
-Wolf CoG OS uses:
-
-Major.Minor.Revision – Codename
-
-Example:
-
-1.0.0 – Lupus‑Prime
-
-1.1.0 – Night‑Forge
-
-1.2.0 – Silver‑Pulse
-
-2.0.0 – Sovereign‑Howl
-
-📜 License
-Choose one:
-
-MIT — maximum adoption
-
-Apache 2.0 — ecosystem + patent safety
-
-GPLv3 — governance stays open
-
-🤝 Contributing
-Wolf CoG OS is a governed substrate.
-All contributions must:
-
-Pass invariant checks
-
-Include ledger‑ready provenance
-
-Follow sigil‑based trust rules
-
-🐺 Wolf CoG OS
-A new species of operating system.
-
-
-Wolf CoG OS is built nights, weekends, and chaos‑goblin energy.  
-If you want to fuel the next invariant engine, sigil layer, or creative lane:
-
-README honesty line (for users right now):
-
-Wolf CoG OS currently implements a signed, measured boot manifest for its cognitive runtime, law spine, and PID1 chain.
-Firmware Secure Boot is not yet enrolled; you must disable Secure Boot in BIOS/UEFI to boot the ISO.
-The next milestone is signing/enrolling shim/GRUB/kernel/initrd keys and folding those measurements into the same manifest and proof chain.
-
-Future: firmware Secure Boot enrollment plan (just sketched):
-
-generate CoGOS signing keypair
-
-sign shim + GRUB + kernel
-
-enroll public key in firmware (or use MOK)
-
-teach secure_boot_trust.py to:
-
-verify on‑disk hashes
-
-record firmware/bootloader measurements into the CoGOS proof report
-
-## 🐺 Support Wolf CoG OS
-
-Wolf CoG OS is built nights, weekends, and chaos‑goblin energy.  
-If you want to fuel the next invariant engine, sigil layer, or creative lane:
-
-**Buy Me a Coffee:** https://buymeacoffee.com/Chaosgoblinus
-
-Your support helps keep the governed substrate evolving.
+AI Systems Architect, Cognitive Runtime Designer, and founder of the Chaos
+Goblinus Engineering Tradition.
