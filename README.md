@@ -39,7 +39,20 @@ On first boot, Wolf CoG OS can:
 - install itself without user intervention.
 
 ### Automatic Windows Compatibility
+Windows Executable Support Requires Wine
+Wolf Cog OS does not ship with Wine pre‑installed.
+If you want .exe files to auto‑launch through the governed UL/Wine bridge, you must install Wine manually.
 
+Without Wine:
+
+.exe files will not run
+
+The auto‑launcher will remain inactive
+
+Right‑click menu options for “Run in Wolf Cog OS” will not appear
+
+To enable Windows app support:  
+Install Wine (or Wine‑Staging) from your package manager, then reboot or log out/in so Wolf Cog OS can detect it.
 Drop a `.exe` file into the system and Wolf CoG OS can:
 
 - detect it;
