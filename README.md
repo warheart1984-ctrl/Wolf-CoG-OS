@@ -80,7 +80,7 @@ The intact ISO is hosted on Google Drive:
 
 ```text
 Wolf-CoG-OS-full.iso
-
+https://drive.google.com/file/d/1C5128Dm1XAU2HOdJNaLsUiQtvNp9k4BF/view?usp=sharing
 ```
 
 SHA-256:
