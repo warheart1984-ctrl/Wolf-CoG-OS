@@ -79,14 +79,15 @@ runtime organism built on top of Debian.
 The intact ISO is hosted on Google Drive:
 
 ```text
-Wolf-CoG-OS-metal-fixed.iso
-https://drive.google.com/file/d/1RwStvSOvMVdCmvLKZOAWmL2wYPrR3pmh/view?usp=sharing
+Wolf-CoG-OS-full.iso
+
 ```
 
 SHA-256:
 
 ```text
-F77638110EB1ECF97202302594AD5E5E19D6A0469F56ED1516A04D7A464CB615  Wolf-CoG-OS-metal-fixed.iso
+de2de3349ebbe0b648c37e9bbbd6e3c6ffa96b3d7f284736f795c1f42c37e073  /home/nullzero/Wolf-CoG-OS-full.iso
+ 
 ```
 
 ## Release 1.0 Battle Scars
